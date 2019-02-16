@@ -8,7 +8,7 @@
 	<meta charset="utf-8">
 	<title>Admin - Shopping Cart</title>
 	<!-- end: Meta -->
-	
+	<link rel="shortcut icon" href="{{{ asset('adminStatic/img/favicon.png') }}}">
 	<!-- start: Mobile Specific -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
