@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     public function index(){
-        echo "Inside index";
+        
     }
 
     public function home(){
-        echo "Inside home";
+        return view('admin.layout');
     }
 }
