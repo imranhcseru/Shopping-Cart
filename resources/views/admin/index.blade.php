@@ -23,25 +23,27 @@
 					</div>
 				</div>
 				<div class="d-flex justify-content-center form_container">
-					<form>
-                        {{csrf_field()}}
+					<form action = "{{url('admin')}}" method = "POST">
+                   {{csrf_field()}}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
 							</div>
-							<input type="text" name="" class="form-control input_user" value="" placeholder="username">
+							<input type="email" name="email" class="form-control input_user" value="" placeholder="username">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-key"></i></span>
 							</div>
-							<input type="password" name="" class="form-control input_pass" value="" placeholder="password">
+							<input type="password" name="password" class="form-control input_pass" value="" placeholder="password">
 						</div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <button type="submit"  class="btn login_btn">Login</button>
+                        </div>
 					</form>
 				</div>
-				<div class="d-flex justify-content-center mt-3 login_container">
-					<button type="button" name="button" class="btn login_btn">Login</button>
-				</div>
+				
+                <!-- <button type="submit" >Login</button> -->
 			</div>
 		</div>
 	</div>

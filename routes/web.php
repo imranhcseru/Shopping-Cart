@@ -18,4 +18,5 @@ Route::get('/', function () {
 Route::prefix('admin')->group(function(){
     Route::get('/','AdminController@index');
     Route::get('/home','AdminController@home');
+    Route::post('/','AdminController@checkAdmin');
 });
