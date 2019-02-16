@@ -18,6 +18,12 @@ class AdminController extends Controller
         $data  = array();
         $data['email'] = $request->email;
         $data['password'] = $request->password;
-        AdminModel::checkAdmin($data);
+        $found = AdminModel::checkAdmin($data);
+        if($found == TRUE){
+            echo "found";
+        }
+        else{
+            echo "sorry";
+        }
     }
 }
