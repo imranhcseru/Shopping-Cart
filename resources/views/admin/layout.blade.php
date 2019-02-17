@@ -105,10 +105,10 @@
 			<ul class="breadcrumb">
 				<li>
 					<i class="icon-home"></i>
-					<a href="index.html">Home</a> 
+					<a href="{{URl::to('/admin/home')}}">Home</a> 
 					<i class="icon-angle-right"></i>
 				</li>
-				<li><a href="#">Dashboard</a></li>
+				<li><a href="{{URl::to('/admin/home')}}">Dashboard</a></li>
 			</ul>
             @yield('addAdminContent')
 			@yield('adminListContent')
