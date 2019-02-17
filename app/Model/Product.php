@@ -22,7 +22,11 @@ class Product extends Model
 
     public static function publishedProduct(){
         $verdict = Self::get()->where('type','published');
-        return $verdict;
-        
+        return $verdict; 
+    }
+
+    public static function draftProduct(){
+        $verdict = Self::get()->where('type','draft');
+        return $verdict; 
     }
 }

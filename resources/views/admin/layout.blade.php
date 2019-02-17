@@ -77,7 +77,7 @@
 							<ul>
 								<li><a class="submenu" href="{{URl::to('/admin/allproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Products</span></a></li>
 								<li><a class="submenu" href="{{URl::to('/admin/publishedproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Published Products</span></a></li>
-								<li><a class="submenu" href="{{URl::to('/admin/draftitems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Draft Products</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/draftproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Draft Products</span></a></li>
 								<li><a class="submenu" href="{{URl::to('/admin/addproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Product</span></a></li>
 							</ul>	
                         </li>
@@ -115,6 +115,7 @@
 			@yield('addProductContent')
 			@yield('allProductContent')
 			@yield('publishedProductContent')
+			@yield('draftProductContent')
 	</div>
 	
 			

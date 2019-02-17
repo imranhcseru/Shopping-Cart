@@ -69,6 +69,13 @@ class AdminController extends Controller
         }
     }
 
+    public function draftProduct(){
+        if($this->checkSession() == TRUE){
+            $draftProduct = Product::draftProduct();
+            return view('admin.draftProduct')->with('products',$draftProduct); 
+        }
+    }
+
     public function addProduct(){
         if($this->checkSession() == TRUE){
             $category = Category::category();
