@@ -52,7 +52,7 @@
 								<span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="{{URl::to('/adminStatic/logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
+								<li><a href="{{URl::to('/admin/logout')}}"><i class="halflings-icon off"></i> Logout</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->

@@ -5,16 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Model\AdminModel;
 use Session;
+
 use Illuminate\Support\Facades\Redirect;
 session_start();
 class AdminController extends Controller
-{
-    public function index(){
-        return view('admin.index');
+{   
+    public function checkSession(){
+        if(Session::has('adminName')){
+            return TRUE;
+        }
+        else{
+            echo "login first";
+            //Session::put('sessionError','You need to login first');
+            //return view('admin.index');
+        }
     }
 
-    public function home(){
-        return view('admin.layout');
+    public function index(){
+        return view('admin.index');
     }
 
     public function checkAdmin(Request $request){
@@ -34,6 +42,16 @@ class AdminController extends Controller
         }
     }
 
+    public function home(){
+        if($this->checkSession() == TRUE){
+            return view('admin.layout');
+        } 
+    }
+
+    public function logout(){
+        session()->flush(); 
+        return Redirect::to('admin');
+    }
     public function addAdmin(){
         return view('admin.addAdmin');
     }

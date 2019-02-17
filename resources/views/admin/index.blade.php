@@ -28,8 +28,11 @@
 						@if (Session::has('credentialError'))
 							<p class="text-danger">{{Session::get('credentialError')}}</p>
 							{{Session::put('credentialError',null)}}
+						@elseif (Session::has('sessionError'))
+							<p class="text-danger">{{Session::get('sessionError')}}</p>
+							{{Session::put('sessionError',null)}}
 						@endif
-                   {{csrf_field()}}
+                   		{{csrf_field()}}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-user"></i></span>
