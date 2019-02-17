@@ -19,4 +19,10 @@ class Product extends Model
         $verdict = Self::get();
         return $verdict;
     }
+
+    public static function publishedProduct(){
+        $verdict = Self::get()->where('type','published');
+        return $verdict;
+        
+    }
 }

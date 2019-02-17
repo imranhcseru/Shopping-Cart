@@ -21,6 +21,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/home','AdminController@home');
     Route::get('/logout','AdminController@logout');
     Route::get('/allproduct','AdminController@allProduct');
+    Route::get('/publishedproduct','AdminController@publishedProduct');
     Route::get('/addproduct','AdminController@addProduct');
     Route::post('/addproduct','AdminController@storeProduct');
     Route::get('/addadmin','AdminController@addAdmin');
