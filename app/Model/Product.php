@@ -30,8 +30,38 @@ class Product extends Model
         return $verdict; 
     }
 //For User Panel
+    public static function flashSale(){
+        $verdict = Self::where('discount', '>=', 1)->orderBy('discount','DESC')->limit(5)->get();
+        return $verdict;
+    }
+
     public static function electronics(){
         $verdict = Self::where('category','Electronics')->limit(5)->get();
+        return $verdict;
+    }
+
+    public static function beautyAndHealth(){
+        $verdict = Self::where('category','Beauty & Health')->limit(5)->get();
+        return $verdict;
+    }
+
+    public static function babiesAndToys(){
+        $verdict = Self::where('category','Babies & Toys')->limit(5)->get();
+        return $verdict;
+    }
+
+    public static function sportsAndOutdoor(){
+        $verdict = Self::where('category','Sports & Outdoor')->limit(5)->get();
+        return $verdict;
+    }
+
+    public static function mensFashion(){
+        $verdict = Self::where('category','Mens Fashion')->limit(5)->get();
+        return $verdict;
+    }
+
+    public static function womensFashion(){
+        $verdict = Self::where('category','Womens Fashion')->limit(5)->get();
         return $verdict;
     }
 }

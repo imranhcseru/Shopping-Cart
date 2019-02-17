@@ -96,14 +96,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['flashSale'] as $flashSale)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$flashSale->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$flashSale->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$flashSale->price}}</p>
+                        <p class="card-text" >-{{$flashSale->discount}}%</p>
+                        <p class="card-text" >৳{{$flashSale->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -146,14 +146,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['beautyAndHealth'] as $beautyAndHealth)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$beautyAndHealth->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$beautyAndHealth->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$beautyAndHealth->price}}</p>
+                        <p class="card-text" >-{{$beautyAndHealth->discount}}%</p>
+                        <p class="card-text" >৳{{$beautyAndHealth->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -171,14 +171,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['babiesAndToys'] as $babiesAndToys)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$babiesAndToys->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$babiesAndToys->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$babiesAndToys->price}}</p>
+                        <p class="card-text" >-{{$babiesAndToys->discount}}%</p>
+                        <p class="card-text" >৳{{$babiesAndToys->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -196,14 +196,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['sportsAndOutdoor'] as $sportsAndOutdoor)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$sportsAndOutdoor->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$sportsAndOutdoor->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$sportsAndOutdoor->price}}</p>
+                        <p class="card-text" >-{{$sportsAndOutdoor->discount}}%</p>
+                        <p class="card-text" >৳{{$sportsAndOutdoor->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -221,14 +221,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['mensFashion'] as $mensFashion)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$mensFashion->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$mensFashion->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$mensFashion->price}}</p>
+                        <p class="card-text" >-{{$mensFashion->discount}}%</p>
+                        <p class="card-text" >৳{{$mensFashion->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -245,14 +245,14 @@
             </span>
         </div>
         <div class = "row" align = "center">
-            @foreach($data['electronics'] as $electronics)
+            @foreach($data['womensFashion'] as $womensFashion)
                 <div class="card" style="width: 22rem;">
-                    <a href = "#"><img class="card-img-top" src="/upload/{{$electronics->image}}" alt="Card image cap" style="height:170px;"></a> 
+                    <a href = "#"><img class="card-img-top" src="/upload/{{$womensFashion->image}}" alt="Card image cap" style="height:170px;"></a> 
                     <div class="card-body" align = "center">
-                        <h5 class="card-title">{{$electronics->name}}</h5>
-                        <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
-                        <p class="card-text" >-{{$electronics->discount}}%</p>
-                        <p class="card-text" >৳{{$electronics->totalPrice}}</p>
+                        <h5 class="card-title">{{$womensFashion->name}}</h5>
+                        <p class="card-text" style = "text-decoration: line-through;">৳{{$womensFashion->price}}</p>
+                        <p class="card-text" >-{{$womensFashion->discount}}%</p>
+                        <p class="card-text" >৳{{$womensFashion->totalPrice}}</p>
                         <a href="#" class="btn btn-warning">Add to Cart</a>
                     </div>
                 </div>
@@ -299,10 +299,10 @@
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
             <ul class="list-unstyled list-inline social text-center">
-              <li class="list-inline-item"><a href="https://www.facebook.com/mih133" target="_blank"><i class="fa fa-facebook"></i></a></li>
-              <li class="list-inline-item"><a href="https://github.com/imranhcseru" target="_blank"><i class="fa fa-github"></i></a></li>
-              <li class="list-inline-item"><a href="https://www.instagram.com/iammimranh/" target="_blank"><i class="fa fa-instagram"></i></a></li>
-              <li class="list-inline-item"><a href="https://plus.google.com/u/0/100176714962618354106?tab=wX" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+              <li class="list-inline-item"><a href="https://www.facebook.com/mih133" target="_blank"><img class = "acnt_logo"src = "{{url('/userStatic/img/facebook.png')}}"></a></li>
+              <li class="list-inline-item"><a href="https://github.com/imranhcseru" target="_blank"><img class = "acnt_logo"src = "{{url('/userStatic/img/github.png')}}"></a></li>
+              <li class="list-inline-item"><a href="https://www.instagram.com/iammimranh/" target="_blank"><img class = "acnt_logo"src = "{{url('/userStatic/img/instagram.png')}}"></a></li>
+              <li class="list-inline-item"><a href="https://plus.google.com/u/0/100176714962618354106?tab=wX" target="_blank"><img class = "acnt_logo"src = "{{url('/userStatic/img/google.png')}}"></a></li>
             </ul>
           </div>
           </hr>
