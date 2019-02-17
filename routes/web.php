@@ -19,4 +19,7 @@ Route::prefix('admin')->group(function(){
     Route::get('/','AdminController@index');
     Route::get('/home','AdminController@home');
     Route::post('/','AdminController@checkAdmin');
+    Route::get('/addadmin','AdminController@addAdmin');
+    Route::post('/addadmin','AdminController@storeAdmin');
+    Route::get('/adminlist','AdminController@adminList');
 });

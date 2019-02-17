@@ -34,7 +34,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="{{URl::to('/adminStatic/home')}}"><span>adminStatic Panel</span></a>
+				<a class="brand" href="{{URl::to('/adminStatic/home')}}"><span>Admin</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -95,7 +95,7 @@
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Admin</span><span class="label label-important"></span></a>
 							<ul>
 								<li><a class="submenu" href="{{URl::to('/Admin/allAdmins')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Admins</span></a></li>
-								<li><a class="submenu" href="{{URl::to('/Admin/addAdmin')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Admin</span></a></li>
+								<li><a class="submenu" href="{{URl::to('admin/addadmin')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Admin</span></a></li>
 							</ul>	
                         </li>
 					</ul>
@@ -115,7 +115,7 @@
 				</li>
 				<li><a href="#">Dashboard</a></li>
 			</ul>
-            @yield('content')
+            @yield('addAdminContent')
 	</div><!--/.fluid-container-->
 	
 			<!-- end: Content -->

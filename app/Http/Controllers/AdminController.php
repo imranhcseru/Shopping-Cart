@@ -32,4 +32,39 @@ class AdminController extends Controller
             return Redirect::back();
         }
     }
+
+    public function addAdmin(){
+        return view('admin.addAdmin');
+    }
+
+    public function storeAdmin(Request $request){
+        $data  = array();
+        $data['fname'] = $request->fname;
+        $data['lname'] = $request->lname;
+        $data['email'] = $request->email;
+        $data['password'] = $request->password;
+        $data['con_password'] = $request->con_password;
+        if($data['password'] != $data['con_password']){
+            Session::put('passwordError','Password does not match');
+            return Redirect::back();
+        }
+        else{
+            $emailExist = AdminModel::emailExist($data['email']);
+            if($emailExist == TRUE){
+                Session::put('emailError','Email Already Exist');
+                return Redirect::back();
+            }
+            else{
+                AdminModel::storeAdmin($data);
+                Session::put('addAdminSuccess','Admin Added Successfully');
+                return Redirect::to('admin/adminlist');
+            }
+        }
+        
+    }
+
+    public function adminList(){
+        $adminList = AdminModel::adminList();
+        return view('admin.adminList')->with($adminList);
+    }
 }
