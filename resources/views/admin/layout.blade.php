@@ -45,8 +45,8 @@
 							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
 								<h3 style="color:blue;">
 									<?php
-										$user_name = Session::get('user_name');
-										echo($user_name);
+										$adminName = Session::get('adminName');
+										echo($adminName);
 									?>
 								</h3> 
 								<span class="caret"></span>
@@ -75,7 +75,7 @@
 						<li><a href="{{URl::to('/adminStatic/home')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Dashboard</span></a></li>
                         <li><a href="{{URl::to('/adminStatic/users')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Users</span></a></li>
 						<li>
-							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet">Item</span><span class="label label-important"></span></a>
+							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet">Product</span><span class="label label-important"></span></a>
 							<ul>
 								<li><a class="submenu" href="{{URl::to('/adminStatic/allitems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Products</span></a></li>
 								<li><a class="submenu" href="{{URl::to('/adminStatic/publisheditems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Published Products</span></a></li>
@@ -94,7 +94,7 @@
                         <li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Admin</span><span class="label label-important"></span></a>
 							<ul>
-								<li><a class="submenu" href="{{URl::to('/Admin/allAdmins')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Admins</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/adminlist')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Admins</span></a></li>
 								<li><a class="submenu" href="{{URl::to('admin/addadmin')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Admin</span></a></li>
 							</ul>	
                         </li>
@@ -116,6 +116,7 @@
 				<li><a href="#">Dashboard</a></li>
 			</ul>
             @yield('addAdminContent')
+			@yield('adminListContent')
 	</div><!--/.fluid-container-->
 	
 			<!-- end: Content -->

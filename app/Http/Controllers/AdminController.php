@@ -22,9 +22,10 @@ class AdminController extends Controller
         $data['email'] = $request->email;
         $data['password'] = $request->password;
         $found = AdminModel::checkAdmin($data);
+        
         if($found == TRUE){
-            Session::put('adminName','$found->fname');
-            Session::put('adminId','$found->id');
+            Session::put('adminName',$found->fname);
+            Session::put('adminId',$found->id);
             return Redirect::to('admin/home');
         }
         else{
@@ -56,8 +57,7 @@ class AdminController extends Controller
             }
             else{
                 AdminModel::storeAdmin($data);
-                Session::put('addAdminSuccess','Admin Added Successfully');
-                return Redirect::to('admin/adminlist');
+                return Redirect::to('admin/adminlist')->with('addAdminSuccess','Admin Added Successfully');
             }
         }
         
@@ -65,6 +65,6 @@ class AdminController extends Controller
 
     public function adminList(){
         $adminList = AdminModel::adminList();
-        return view('admin.adminList')->with($adminList);
+        return view('admin.adminList')->with('admins',$adminList);
     }
 }

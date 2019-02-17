@@ -21,8 +21,7 @@ class AdminModel extends Model
     }
     
     public static function storeAdmin($data){
-        $data['created_at'] = $data['updated_at']= date('Y-m-d');
-        $addAdminSuccess = Self::insert(array('fname'=>$data['fname'],'lname'=>$data['lname'],'email'=>$data['email'],'password'=>$data['password'],'created_at'=>$data['created_at'],'updated_at'=>$data['updated_at']));
+        $addAdminSuccess = Self::insert(array('fname'=>$data['fname'],'lname'=>$data['lname'],'email'=>$data['email'],'password'=>$data['password']));
         return $addAdminSuccess;
         
     }

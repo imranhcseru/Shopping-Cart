@@ -43,7 +43,7 @@
                         </div>
                         </div>
                         <div class="control-group">
-                        <label class="control-label" for="typeahead">Confirm Pasword</label>
+                        <label class="control-label" for="typeahead">Confirm Password</label>
                         <div class="controls">
                             <input type="password" class="span6 typeahead" id="typeahead"  name = "con_password">
                         </div>
