@@ -1,12 +1,12 @@
 @extends('admin.layout')
-@section('content')
+@section('addProductContent')
     <div class="row-fluid sortable">
         <div class="box span12">
             <div class="box-header" data-original-title>
                 <h2><i class="halflings-icon edit"></i><span class="break"></span>Add New Product</h2>
             </div>
             <div class="box-content">
-                <form class="form-horizontal" action="{{url('/admin/storeitem')}}" method="post" enctype = "multipart/form-data">
+                <form class="form-horizontal" action="{{url('/admin/addproduct')}}" method="post" enctype = "multipart/form-data">
                     {{csrf_field()}}
                     <fieldset>
                         <div class="control-group">
@@ -34,6 +34,16 @@
                             </div>
                         </div>
                         <div class="control-group">
+                            <label class="control-label" for="selectError3">Category</label>
+                            <div class="controls">
+                                <select id="selectError3" name = "category">
+                                    @foreach($categories as $category)
+                                        <option>{{$category->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
                             <label class="control-label" for="fileInput">Product Image</label>
                             <div class="controls">
                                 <input class="input-file uniform_on" id="fileInput" type="file" name = "image">
@@ -43,16 +53,6 @@
                             <label class="control-label" for="textarea2">Detail</label>
                             <div class="controls">
                                 <textarea class="cleditor" id="textarea2" rows="3" name = "detail"></textarea>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label class="control-label" for="selectError3">Category</label>
-                            <div class="controls">
-                                <select id="selectError3" name = "category">
-                                    @foreach($categories as $category)
-                                        <option>{{$category->category}}</option>
-                                    @endforeach
-                                </select>
                             </div>
                         </div>
                         <div class="form-actions">

@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from bootstrapmaster.com/live/metro/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 08 Jan 2018 16:56:12 GMT -->
 <head>
 	
 	<!-- start: Meta -->
@@ -34,7 +32,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="{{URl::to('/adminStatic/home')}}"><span>Admin</span></a>
+				<a class="brand" href="{{URl::to('/admin/home')}}"><span>Admin</span></a>
 								
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -72,23 +70,23 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li><a href="{{URl::to('/adminStatic/home')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Dashboard</span></a></li>
-                        <li><a href="{{URl::to('/adminStatic/users')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Users</span></a></li>
+						<li><a href="{{URl::to('/admin/home')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Dashboard</span></a></li>
+                        <li><a href="{{URl::to('/admin/users')}}"><i class="icon-bar-chart"></i><span class="hidden-tablet">Users</span></a></li>
 						<li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet">Product</span><span class="label label-important"></span></a>
 							<ul>
-								<li><a class="submenu" href="{{URl::to('/adminStatic/allitems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Products</span></a></li>
-								<li><a class="submenu" href="{{URl::to('/adminStatic/publisheditems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Published Products</span></a></li>
-								<li><a class="submenu" href="{{URl::to('/adminStatic/draftitems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Draft Products</span></a></li>
-								<li><a class="submenu" href="{{URl::to('/adminStatic/additem')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Product</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/allproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Products</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/publisheditems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Published Products</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/draftitems')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Draft Products</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/addproduct')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Add Product</span></a></li>
 							</ul>	
                         </li>
                         <li>
 							<a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Order</span><span class="label label-important"></span></a>
 							<ul>
-								<li><a class="submenu" href="{{URl::to('/adminStatic/allorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Orders</span></a></li>
-                                <li><a class="submenu" href="{{URl::to('/adminStatic/servedorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Served Orders</span></a></li>
-                                <li><a class="submenu" href="{{URl::to('/adminStatic/unservedorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Unserved Orders</span></a></li>
+								<li><a class="submenu" href="{{URl::to('/admin/allorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">All Orders</span></a></li>
+                                <li><a class="submenu" href="{{URl::to('/admin/servedorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Served Orders</span></a></li>
+                                <li><a class="submenu" href="{{URl::to('/admin/unservedorders')}}"><i class="icon-file-alt"></i><span class="hidden-tablet">Unserved Orders</span></a></li>
 							</ul>	
                         </li>
                         <li>
@@ -101,9 +99,6 @@
 					</ul>
 				</div>
 			</div>
-			<!-- end: Main Menu -->
-			
-			<!-- start: Content -->
 			<div id="content" class="span10">
 			
 			
@@ -117,11 +112,13 @@
 			</ul>
             @yield('addAdminContent')
 			@yield('adminListContent')
-	</div><!--/.fluid-container-->
+			@yield('addProductContent')
+			@yield('allProductContent')
+	</div>
 	
-			<!-- end: Content -->
-		</div><!--/#content.span10-->
-		</div><!--/fluid-row-->
+			
+		</div>
+		</div>
 		
 	<div class="modal hide fade" id="myModal">
 		<div class="modal-header">
@@ -142,7 +139,7 @@
 	<footer>
 
 		<p>
-			<span class="hidden-phone" style="text-align:right;float:right">Copyroght  &copy Rakib Bhuiyan</span>
+			<span class="hidden-phone" style="text-align:right;float:right">Copyroght  &copy Imran</span>
 		</p>
 
 	</footer>

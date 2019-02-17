@@ -30,4 +30,6 @@ class AdminModel extends Model
         $verdict = Self::get();
         return $verdict;
     }
+
+    
 }
