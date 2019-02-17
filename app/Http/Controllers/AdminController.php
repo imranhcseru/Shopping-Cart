@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\AdminModel;
+use Session;
+use Illuminate\Support\Facades\Redirect;
+session_start();
 class AdminController extends Controller
 {
     public function index(){
@@ -20,10 +23,13 @@ class AdminController extends Controller
         $data['password'] = $request->password;
         $found = AdminModel::checkAdmin($data);
         if($found == TRUE){
-            echo "found";
+            Session::put('adminName','$found->fname');
+            Session::put('adminId','$found->id');
+            return Redirect::to('admin/home');
         }
         else{
-            echo "sorry";
+            Session::put('credentialError','Credentials Does Not Matched');
+            return Redirect::back();
         }
     }
 }

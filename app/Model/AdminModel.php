@@ -11,7 +11,7 @@ class AdminModel extends Model
     public $timestamps = true;
 
     public static function checkAdmin($data){
-        $found = $this->where('email',$data['email'])->where('password',$data['password'])->first();
+        $found = Self::where('email',$data['email'])->where('password',$data['password'])->first();
         return $found;
     }
 }

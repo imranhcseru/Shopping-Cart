@@ -22,8 +22,13 @@
 						<img src="{{ asset('adminStatic/img/favicon.png')}}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
+				<span></span>
 				<div class="d-flex justify-content-center form_container">
 					<form action = "{{url('admin')}}" method = "POST">
+						@if (Session::has('credentialError'))
+							<p class="text-danger">{{Session::get('credentialError')}}</p>
+							{{Session::put('credentialError',null)}}
+						@endif
                    {{csrf_field()}}
 						<div class="input-group mb-3">
 							<div class="input-group-append">
