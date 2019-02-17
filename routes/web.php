@@ -10,11 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/','UserController@home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+//Admin Panel Routes
 Route::prefix('admin')->group(function(){
     Route::get('/','AdminController@index');
     Route::post('/','AdminController@checkAdmin');

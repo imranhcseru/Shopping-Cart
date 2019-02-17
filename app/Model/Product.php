@@ -29,4 +29,9 @@ class Product extends Model
         $verdict = Self::get()->where('type','draft');
         return $verdict; 
     }
+//For User Panel
+    public static function electronics(){
+        $verdict = Self::where('category','Electronics')->limit(5)->get();
+        return $verdict;
+    }
 }
