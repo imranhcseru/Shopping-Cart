@@ -19,13 +19,11 @@ class UserController extends Controller
         return view('user.home')->with('data',$data);
     }
 
-    public function cartSession(Request $request){
-        $prodId = array();
+    public function addToCart(Request $request){
         $prodOnCart = $request->prodOnCart;
+        $prodId = $request->prodId;
         $prodOnCart = $prodOnCart +1;
-        $newId = $request->prodId;
-        array_push($prodId,$newId);
         Session::put('prodOnCart',$prodOnCart);
-        return Redirect::back();
+        Session::push('prodId', $prodId);
     }
 }

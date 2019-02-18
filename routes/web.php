@@ -11,7 +11,7 @@
 |
 */
 Route::get('/','UserController@home');
-Route::post('/cartsession','UserController@cartSession');
+Route::post('addtocart','UserController@addToCart');
 
 //Admin Panel Routes
 Route::prefix('admin')->group(function(){
