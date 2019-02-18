@@ -117,7 +117,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$flashSale->price}}</p>
                             <p class="card-text" >-{{$flashSale->discount}}%</p>
                             <p class="card-text" >৳{{$flashSale->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$flashSale->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$flashSale->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -142,7 +146,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
                             <p class="card-text" >-{{$electronics->discount}}%</p>
                             <p class="card-text" >৳{{$electronics->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$electronics->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$electronics->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -167,7 +175,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$beautyAndHealth->price}}</p>
                             <p class="card-text" >-{{$beautyAndHealth->discount}}%</p>
                             <p class="card-text" >৳{{$beautyAndHealth->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$beautyAndHealth->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$beautyAndHealth->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -192,7 +204,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$babiesAndToys->price}}</p>
                             <p class="card-text" >-{{$babiesAndToys->discount}}%</p>
                             <p class="card-text" >৳{{$babiesAndToys->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$babiesAndToys->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$babiesAndToys->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -217,7 +233,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$sportsAndOutdoor->price}}</p>
                             <p class="card-text" >-{{$sportsAndOutdoor->discount}}%</p>
                             <p class="card-text" >৳{{$sportsAndOutdoor->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$sportsAndOutdoor->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$sportsAndOutdoor->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -242,7 +262,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$mensFashion->price}}</p>
                             <p class="card-text" >-{{$mensFashion->discount}}%</p>
                             <p class="card-text" >৳{{$mensFashion->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$mensFashion->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$mensFashion->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -266,7 +290,11 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$womensFashion->price}}</p>
                             <p class="card-text" >-{{$womensFashion->discount}}%</p>
                             <p class="card-text" >৳{{$womensFashion->totalPrice}}</p>
-                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$womensFashion->id}}>Add to Cart</button>
+                            <form id = "form-insert" method = "post" action="/cartsession">
+                                <input name = 'prodOnCart' type="hidden" id = "prodOnCart" value = <?php echo Session::get('prodOnCart');?>>
+                                <input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
+                                <button class="btn btn-warning addCart"><input name = 'prodId' type="hidden" id = "prodId" value = {{$womensFashion->id}}>Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                 @endforeach
@@ -342,8 +370,7 @@
             var prodOnCart = parseInt($('#cart-number').text());
             $(document).on('click','.addCart',function(event){
                 prodOnCart = prodOnCart + 1;
-                var id = $(this).find('#task_id').val();
-                console.log(id);
+                var id = $(this).find('#prodId').val();
                 $('#cart-number').text(prodOnCart);
                 swal({
                     title:"Add to Cart",
@@ -351,6 +378,21 @@
                     icon: "success",
                     timer:3000
                 });
+                console.log(id);
+                // $("#form-insert").on('submit',function(e){
+                //     e.preventDefault();
+                //     var data = $(this).serialize();
+                //     var url = $(this).attr('action');
+                //     $.ajax({
+                //         type : 'post',
+                //         url : url,
+                //         data : data,
+                //         success:function(response){
+                //                 location.reload();
+                //         }
+                //     });
+                // });
+                
             });
         });
     </script>

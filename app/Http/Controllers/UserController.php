@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Model\Product;
+use Session;
+use Illuminate\Support\Facades\Redirect;
 class UserController extends Controller
 {
     public function home(){
@@ -15,5 +17,15 @@ class UserController extends Controller
         $data['mensFashion'] = Product::mensFashion();
         $data['womensFashion'] = Product::womensFashion();
         return view('user.home')->with('data',$data);
+    }
+
+    public function cartSession(Request $request){
+        $prodId = array();
+        $prodOnCart = $request->prodOnCart;
+        $prodOnCart = $prodOnCart +1;
+        $newId = $request->prodId;
+        array_push($prodId,$newId);
+        Session::put('prodOnCart',$prodOnCart);
+        return Redirect::back();
     }
 }
