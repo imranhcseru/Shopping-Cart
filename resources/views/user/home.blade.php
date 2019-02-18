@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="shortcut icon" href="{{{ asset('adminStatic/img/favicon.png') }}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Shopping Cart</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -51,8 +52,19 @@
         </div>
         <div>
             <a class="navbar-brand pb-2 " href="index.html">
-            <img id = "cart_icon" class = "cart_logo"src = "{{url('/userStatic/img/cart.png')}}">
-            <p id = "cart-number">0</p>
+                <img id = "cart_icon" class = "cart_logo"src = "{{url('/userStatic/img/cart.png')}}">
+                <p id = "cart-number">
+                    <?php 
+                        if(Session::has('prodOnCart')){
+                            //session()->flush();
+                            echo Session::get('prodOnCart');
+                        }
+                        else{
+                            Session::put('prodOnCart',0);
+                            echo Session::get('prodOnCart');
+                        }
+                    ?>
+                </p>
             </a>
         </div>
         <a class = "btn btn-success">Login</a><span>  &nbsp;&nbsp;&nbsp;  </span>
@@ -105,7 +117,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$flashSale->price}}</p>
                             <p class="card-text" >-{{$flashSale->discount}}%</p>
                             <p class="card-text" >৳{{$flashSale->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$flashSale->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -130,7 +142,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$electronics->price}}</p>
                             <p class="card-text" >-{{$electronics->discount}}%</p>
                             <p class="card-text" >৳{{$electronics->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$electronics->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -155,7 +167,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$beautyAndHealth->price}}</p>
                             <p class="card-text" >-{{$beautyAndHealth->discount}}%</p>
                             <p class="card-text" >৳{{$beautyAndHealth->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$beautyAndHealth->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -180,7 +192,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$babiesAndToys->price}}</p>
                             <p class="card-text" >-{{$babiesAndToys->discount}}%</p>
                             <p class="card-text" >৳{{$babiesAndToys->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$babiesAndToys->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -205,7 +217,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$sportsAndOutdoor->price}}</p>
                             <p class="card-text" >-{{$sportsAndOutdoor->discount}}%</p>
                             <p class="card-text" >৳{{$sportsAndOutdoor->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$sportsAndOutdoor->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -230,7 +242,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$mensFashion->price}}</p>
                             <p class="card-text" >-{{$mensFashion->discount}}%</p>
                             <p class="card-text" >৳{{$mensFashion->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$mensFashion->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -254,7 +266,7 @@
                             <p class="card-text" style = "text-decoration: line-through;">৳{{$womensFashion->price}}</p>
                             <p class="card-text" >-{{$womensFashion->discount}}%</p>
                             <p class="card-text" >৳{{$womensFashion->totalPrice}}</p>
-                            <button class="btn btn-warning addCart">Add to Cart</button>
+                            <button class="btn btn-warning addCart"><input type="hidden" id = "task_id" value = {{$womensFashion->id}}>Add to Cart</button>
                         </div>
                     </div>
                 @endforeach
@@ -320,10 +332,18 @@
     </div>
     <script>
         $(document).ready(function(){
+            $.ajaxSetup({
+                headers:{
+                    'X-CSRF-TOKEN': $('meta[name = "csrf-token"]').attr('content')
+                }
+            });
+
+            $('.hiddenId').hide();
             var prodOnCart = parseInt($('#cart-number').text());
-            $('.addCart').click(function(){
+            $(document).on('click','.addCart',function(event){
                 prodOnCart = prodOnCart + 1;
-                console.log(prodOnCart);
+                var id = $(this).find('#task_id').val();
+                console.log(id);
                 $('#cart-number').text(prodOnCart);
                 swal({
                     title:"Add to Cart",
