@@ -26,4 +26,17 @@ class UserController extends Controller
         Session::put('prodOnCart',$prodOnCart);
         Session::push('prodId', $prodId);
     }
+
+    public function cart(){
+        $data = array();
+        $data['flashSale'] = Product::flashSale();
+        $cartProdId = Session::get('prodId');
+        $data['length'] = sizeof($cartProdId);
+        //echo gettype($data['length']);
+        // 
+        for ($id = 0;$id<sizeof($cartProdId);$id++){
+            $data[$id] = Product::getCartProduct($cartProdId[$id]); 
+        }
+        return view('user.cart')->with('data',$data);
+    }
 }

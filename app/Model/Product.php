@@ -64,4 +64,9 @@ class Product extends Model
         $verdict = Self::where('category','Womens Fashion')->limit(5)->get();
         return $verdict;
     }
+
+    public static function getCartProduct($id){
+        $verdict = Self::where('id',$id)->first();
+        return $verdict;
+    }
 }

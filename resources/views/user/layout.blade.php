@@ -51,7 +51,7 @@
             </div>
         </div>
         <div id = "campaign">
-            <a class="navbar-brand pb-2 " id = "cartLink" href="index.html">
+            <a class="navbar-brand pb-2 " id = "cartLink" href="{{url('/cart')}}">
                 <img id = "cart_icon" class = "cart_logo"src = "{{url('/userStatic/img/cart.png')}}">
                 <p id = "cart-number">
                     <?php 
@@ -74,6 +74,7 @@
     </header>
     <hr>
     @yield('homeContent')
+    @yield('cartContent')
     <div class = "container-fluid">
         <section id="footer">
             <div class="container">
