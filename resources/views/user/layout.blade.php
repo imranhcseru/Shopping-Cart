@@ -21,7 +21,7 @@
     <header class = "bg-light">
     <div class = "container-fluid">
         <nav class="navbar navbar-expand-md navbar-light ">
-        <a class="navbar-brand pb-2 " href="index.html"><img class = "cart_logo"src = "{{url('/userStatic/img/logo.jpg')}}"></a>
+        <a class="navbar-brand pb-2 " href="{{url('/')}}"><img class = "cart_logo"src = "{{url('/userStatic/img/logo.jpg')}}"></a>
         <button class="navbar-toggler btn btn-secondary" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         
         </button>
